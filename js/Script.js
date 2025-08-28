@@ -9,7 +9,7 @@ for(const HardButton of HardButtons){
 
 
 
-function HandelFunction(id, code){
+function HandelFunction(id, code, name){
     const CallFunctionality = document.getElementById(id)
     CallFunctionality.addEventListener('click', function(){
        let AcouuntBalance = parseInt(document.getElementById('AcouuntBalance').innerText);
@@ -24,7 +24,7 @@ function HandelFunction(id, code){
         }
 
         let timeObj = {
-            name: id,
+            name:name,
             code:code,
             date: new Date().toLocaleTimeString()
         }
@@ -35,30 +35,70 @@ function HandelFunction(id, code){
     });
 
 }
+HandelFunction('NationalEmergency' ,999, 'জাতীয় জরুরি সেবা' )
 
-HandelFunction('NationalEmergency' ,999, )
+HandelFunction('Police' , 999, 'পুলিশ')
 
-HandelFunction('Police' , 999)
+HandelFunction('FireService', 999, 'ফায়ার সার্ভিস')
 
-HandelFunction('FireService', 999)
+HandelFunction('Ambulance' , 1994999999, 'অ্যাম্বুলেন্স')
 
-HandelFunction('Ambulance' , 1994-999999)
+HandelFunction('WomenChild' , 109, 'নারী ও শিশু সহায়তা')
 
-HandelFunction('WomenChild' , 109)
+HandelFunction('AntiCorruption' , 106, 'দুদক')
 
-HandelFunction('AntiCorruption' , 106)
+HandelFunction('ElectricityOutage' , 16216, 'বিদ্যুৎ বিভ্রাট')
 
-HandelFunction('ElectricityOutage' , 16216)
+HandelFunction('Brac' , 16445, 'ব্র্যাক')
+HandelFunction('BangladeshRailway' , 163, 'বাংলাদেশ রেলওয়ে');
 
-HandelFunction('Brac' , 16445)
 
-HandelFunction('BangladeshRailway' , 163);
-
-function ClockFunctionality(){
-    const ClockContainer  = document.getElementById('"ClockContainer');
-    
-
+function renderTimeEntryFunc(id){
+   const rederTimeEntry = document.getElementById(id)
+   rederTimeEntry.addEventListener('click', function(){
+     const ClockContainer  = document.getElementById('ClockContainer');
+      ClockContainer.innerHTML = ''
+      for(let TimeArr of TimeArray){
+        const div = document.createElement('div');
+        div.innerHTML = `
+         <div class="p-3 rounded-2xl bg-gray-200 mt-3">
+                           <div class="flex justify-between items-center">
+                             <h1 class="md:text-lg font-bold text-base">${TimeArr.name}</h1>
+                              <p class="text-lg font-semibold">${TimeArr.date}</p>
+                           </div>
+                           <p class="text-lg text-gray-500">${TimeArr.code}</p>
+                       </div>    
+        
+        `
+         ClockContainer.appendChild(div)
+      }
+   })
 }
+renderTimeEntryFunc('NationalEmergency' )
+
+renderTimeEntryFunc('Police')
+
+renderTimeEntryFunc('FireService')
+
+renderTimeEntryFunc('Ambulance' )
+
+renderTimeEntryFunc('WomenChild' )
+
+renderTimeEntryFunc('AntiCorruption')
+
+renderTimeEntryFunc('ElectricityOutage')
+
+renderTimeEntryFunc('Brac')
+renderTimeEntryFunc('BangladeshRailway');
+
+
+document.getElementById('ClearButton').addEventListener('click', function(){
+     const ClockContainer = document.getElementById('ClockContainer')
+      ClockContainer.innerHTML = ''
+});
+
+
+
 
 
 
