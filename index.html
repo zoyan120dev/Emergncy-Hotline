@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/output.css">
+    <!-- Font awsome aded -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+     <!--daisyui-->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>emergency-Hotline</title>
 </head>
-<body>
+<body class="bg-[#F5FFF6] overflow-x-hidden">
     <!-- Navbar sections -->
      <nav class="flex justify-between items-center p-2 container mx-auto flex-col space-y-3 md:flex-row">
         <div class="flex space-x-4 items-center mt-2">
@@ -21,11 +26,11 @@
 
         <div class="flex space-x-3 items-center">
             <div class="flex space-x-2  bg-green-100 items-center px-5 py-2 rounded-3xl">
-                <span class="text-lg font-bold">0</span>
+                <span class="text-lg font-bold" id="countHard">0</span>
                 <img src="assets/heart.png" alt="" class="w-[30px] h-[30px] object-cover">
             </div>
             <div class="flex space-x-2  bg-green-100 items-center px-3 py-2 rounded-3xl">
-                <span class="text-lg font-bold">100</span>
+                <span class="text-lg font-bold" id="AcouuntBalance">100</span>
                 <img src="assets/coin.png" alt="" class="w-[30px] h-[30px] object-cover">
             </div>
             <button class="bg-[#00A63E] px-4 py-2 text-white rounded-3xl text-xl cursor-pointer">2 copy</button>
@@ -44,14 +49,187 @@
       </section>
 
       <!-- Main section -->
-       <section class="container mx-auto">
+       <section class="container mx-auto mt-10 py-7 flex flex-col md:flex-row">
             <!-- left section -->
-               <section>
-                   <div>
-                      
+               <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-6 lg:w-[70%] md:w-[60%]  gap-5">
+                   <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/emergency.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">জাতীয় জরুরি সেবা</h2>
+                      <p class="text-base md:text-lg">National Emergency</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">999</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">সার্বজনীন</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row space-y-4">
+                        <button class="btn btn-outline xl:px-5  outline-gray-200  lg:px-5 md:px-3 px-0  text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button id="CallFunctionality" class="btn btn-success xl:px-5   lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/police.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">পুলিশ</h2>
+                      <p class="text-base md:text-lg">Police</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">999</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">পুলিশ</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200 xl:px-5   lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success  xl:px-5  lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/fire-service.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">ফায়ার সার্ভিস</h2>
+                      <p class="text-base md:text-lg">Fire Service</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">999</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">ফায়ার</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200  xl:px-5  lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success  xl:px-5   lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/ambulance.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">অ্যাম্বুলেন্স</h2>
+                      <p class="text-base md:text-lg">Ambulance</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">1994-999999</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">স্বাস্থ্য</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200  xl:px5 lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success  xl:px-5 lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/emergency.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">নারী ও শিশু সহায়তা</h2>
+                      <p class="text-base md:text-lg">Women & Child Helpline</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">109</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">সহায়তা</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200 xl:px-5   lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success  xl:px-5  lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/emergency.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">দুদক</h2>
+                      <p class="text-base md:text-lg">Anti-Corruption</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">106</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">সরকারি</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200  xl:px-5  lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success  xl:px-5  lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/emergency.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">বিদ্যুৎ বিভ্রাট</h2>
+                      <p class="text-base md:text-lg">Electricity Outage</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">16216</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">বিদ্যুৎ</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200  xl:px-5  lg:px-5 md:px-5 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success xl:px-5  lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/emergency.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">ব্র্যাক</h2>
+                      <p class="text-base md:text-lg">Brac</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">16445</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">এনজিও</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200  xl:px-5  lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn-success xl:px-5  lg:px-5 md:px-3 px-0 text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
+                   </div>
+
+                     <div class="bg-[#FFFFFF] p-5 shadow-xl rounded-2xl transition-all hover:translate-y-[-5px]">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-[#FFE3E2] p-10 xl:p-5 rounded-xl">
+                            <img src="assets/emergency.png" alt="" class="w-[40px] h-[40px] object-cover">
+                        </div>
+                        <span class="HardButton p-2 rounded-2xl hover:bg-gray-300 transition-all cursor-pointer"><i class="fa-regular fa-heart text-2xl"></i></span>
+                      </div>
+                      <h2 class="py-2 text-lg md:text-xl font-extrabold">বাংলাদেশ রেলওয়ে</h2>
+                      <p class="text-base md:text-lg">Bangladesh Railway</p>
+                      <h1 class="pt-6 pb-2 text-xl md:text-3xl font-semibold">163</h1>
+                      <span class="ml-2 bg-[#F2F2F2] p-2 rounded-2xl mt-2">পরিবহন</span>
+
+                      <div class="flex space-x-4 py-7 flex-col xl:flex-row  space-y-4">
+                        <button class="btn btn-outline outline-gray-200  xl:px-5  lg:px-5 md:px-3 px-0 text-gray-500 text-lg"><i class="fa-solid fa-copy"></i> copy</button>
+                        <button class="btn btn- xl:px-5  lg:px-5 md:px-3 px-0 btn-success  text-white text-lg"><i class="fa-solid fa-phone"></i> Call</button>
+                      </div>
                    </div>
                </section>
             <!-- Right section -->
+             <section class="xl:w-[25%] m-6 grid grid-cols-1 md:row-span-3 row-span-1  relative md:right-5 bg-[#FFFFFF] p-5 shadow-xl rounded-2xl overflow-y-auto">
+                  <div>
+                     <div class="flex justify-between">
+                       <div class="flex gap-2 items-center">
+                        <i class="fa-regular fa-clock flex items-center text-gray-600"></i>
+                        <h1 class="font-bold text-xl">Call History</h1>
+                       </div>
+                     <div>
+                        <button class="btn  btn-success px-10 text-white text-xl">Clear</button>
+                     </div>
+                   </div>
+
+                 
+                  </div>
+             </section>
        </section>
      <!-- JavaScript File add -->
       <script src="js/Script.js"></script>
