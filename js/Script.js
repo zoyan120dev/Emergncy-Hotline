@@ -1,12 +1,13 @@
 let HardButtons = document.getElementsByClassName('HardButton')
  let countHard = document.getElementById('countHard');
+ let copyButton = document.getElementsByClassName('copyButton');
+
  let TimeArray = [];
 for(const HardButton of HardButtons){
     HardButton.addEventListener('click', function(){
        countHard.innerText++;
     })
 };
-
 
 
 function HandelFunction(id, code, name){
@@ -55,12 +56,12 @@ HandelFunction('BangladeshRailway' , 163, 'বাংলাদেশ রেলও
 
 function renderTimeEntryFunc(id){
    const rederTimeEntry = document.getElementById(id)
-   rederTimeEntry.addEventListener('click', function(){
-     const ClockContainer  = document.getElementById('ClockContainer');
-      ClockContainer.innerHTML = ''
-      for(let TimeArr of TimeArray){
-        const div = document.createElement('div');
-        div.innerHTML = `
+  rederTimeEntry.addEventListener('click', function(){
+  const ClockContainer  = document.getElementById('ClockContainer');
+  ClockContainer.innerHTML = '';
+   for(let TimeArr of TimeArray){
+   const div = document.createElement('div');
+   div.innerHTML = `
          <div class="p-3 rounded-2xl bg-gray-200 mt-3">
                            <div class="flex justify-between items-center">
                              <h1 class="md:text-lg font-bold text-base">${TimeArr.name}</h1>
@@ -70,10 +71,12 @@ function renderTimeEntryFunc(id){
                        </div>    
         
         `
-         ClockContainer.appendChild(div)
+       ClockContainer.appendChild(div)
       }
    })
 }
+
+
 renderTimeEntryFunc('NationalEmergency' )
 
 renderTimeEntryFunc('Police')
@@ -92,17 +95,27 @@ renderTimeEntryFunc('Brac')
 renderTimeEntryFunc('BangladeshRailway');
 
 
+
 document.getElementById('ClearButton').addEventListener('click', function(){
-     const ClockContainer = document.getElementById('ClockContainer')
-      ClockContainer.innerHTML = ''
+    document.getElementById('ClockContainer').innerHTML = '';
+    TimeArray = [];
+
 });
 
 
 
 
+// onerther Way copy Functiuonality
 
 
-
+for(let copyBtn of copyButton){
+    copyBtn.addEventListener('click', function(){
+        // console.log('Button copyed' , copyBtn)
+       const getCopyText = copyBtn.parentNode.parentNode.childNodes[7].innerText;
+       navigator.clipboard.writeText(getCopyText);
+       alert(`The number has been copied: ${getCopyText}`);
+    })
+}
 
 
 
