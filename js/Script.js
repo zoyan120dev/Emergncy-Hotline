@@ -2,6 +2,7 @@ let HardButtons = document.getElementsByClassName('HardButton')
  let countHard = document.getElementById('countHard');
  let copyButton = document.getElementsByClassName('copyButton');
 
+
  let TimeArray = [];
 for(const HardButton of HardButtons){
     HardButton.addEventListener('click', function(){
@@ -114,6 +115,8 @@ for(let copyBtn of copyButton){
        const getCopyText = copyBtn.parentNode.parentNode.childNodes[7].innerText;
        navigator.clipboard.writeText(getCopyText);
        alert(`The number has been copied: ${getCopyText}`);
+       let copyCount = document.getElementById('copyCount');
+       copyCount.innerText++;
     })
 }
 
