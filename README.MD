@@ -2,9 +2,9 @@
 
 getElementById() ekta specific element return kore jar unique id thake.
 
-getElementsByClassName()  onek gula element return kore jader same class thake.
+  getElementsByClassName()  onek gula element return kore jader same class thake.
 
-querySelector() CSS selector use kore first matching element return kore.
+ querySelector() CSS selector use kore first matching element return kora.
 
 querySelectorAll() CSS selector use kore shob matching element return kore.
 
@@ -22,6 +22,6 @@ Event Delegation holo ekta parent element e event listener add kora, arpor event
 
 5. What is the difference between preventDefault() and stopPropagation() methods
 
-preventDefault()  browser er default action ke stop kore jemon link e click korle notun page e jawa, form submit howa
+preventDefault()  browser er default action ke stop kore jemon link e click korle notun page e jawa, form submit howe
 
 stopPropagation()  event ke parent element gulo te propagate hote dey na mane bubbling ke stop kore
