@@ -106,7 +106,7 @@ document.getElementById('ClearButton').addEventListener('click', function(){
 
 
 
-// onerther Way copy Functiuonality
+// onerther Way copy Functiuonality  
 
 
 for(let copyBtn of copyButton){
@@ -119,6 +119,7 @@ for(let copyBtn of copyButton){
        copyCount.innerText++;
     })
 }
+
 
 
 
